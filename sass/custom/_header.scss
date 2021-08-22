@@ -1,0 +1,24 @@
+nav{
+	&.primary-navigation{
+		ul{
+			margin-left:0px;
+			li{
+				a{
+					&:first-child{
+						&.px-2{
+							padding-left:0px !important;
+						}
+						
+					}
+				}
+			}
+		}
+	}
+}
+form{
+	&.search-form{
+		.search-submit{
+			display: none;
+		}
+	}
+}

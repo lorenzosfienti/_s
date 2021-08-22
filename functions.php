@@ -143,7 +143,7 @@ function lorenzosfienti_wptheme_scripts() {
 	wp_enqueue_style( 'lorenzosfienti-wptheme-style', get_stylesheet_uri(), array(), LORENZOSFIENTI_WPTHEME_VERSION );
 	wp_style_add_data( 'lorenzosfienti-wptheme-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'lorenzosfienti-wptheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), LORENZOSFIENTI_WPTHEME_VERSION, true );
+	//wp_enqueue_script( 'lorenzosfienti-wptheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), LORENZOSFIENTI_WPTHEME_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -172,6 +172,11 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Navigation additions.
+ */
+require get_template_directory() . '/inc/navigation.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
@@ -184,3 +189,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+

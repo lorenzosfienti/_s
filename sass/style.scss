@@ -100,3 +100,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Alignments
 --------------------------------------------- */
 @import "utilities/alignments";
+
+/* Bootstrap
+--------------------------------------------- */
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+
+/* Custom
+--------------------------------------------- */
+@import "custom/header";
+@import "custom/typography";
+

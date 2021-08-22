@@ -24,36 +24,32 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'lorenzosfienti-wptheme' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$lorenzosfienti_wptheme_description = get_bloginfo( 'description', 'display' );
-			if ( $lorenzosfienti_wptheme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $lorenzosfienti_wptheme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'lorenzosfienti-wptheme' ); ?></button>
+	<header class="py-3 border-bottom">
+		<div class="container d-flex flex-wrap justify-content-center">
+		<h1 class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto fs-4"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-dark text-decoration-none">
+			<?php bloginfo( 'name' ); ?>
+		</a></h1>
+		<?php
+		get_search_form();
+		?>
+		</div>
+	</header>
+	<nav class="py-2 mb-4 bg-light border-bottom primary-navigation">
+		<div class="container d-flex flex-wrap">
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
+					'menu_class' => 'nav',
+					'menu_id' => 'primary-navigation',
+					'container' => 'ul',
+					'list_item_class' => 'nav-item',
+					'link_class' => 'nav-link link-dark px-2'
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-9">
